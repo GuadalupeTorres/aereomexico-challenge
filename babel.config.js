@@ -11,6 +11,7 @@ module.exports = {
         '@styles': './src/styles',
         '@assets': './src/assets',
         '@screens': './src/screens',
+        '@features': './src/features',
       }
     }]
   ]

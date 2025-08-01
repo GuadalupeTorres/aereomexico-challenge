@@ -8,7 +8,8 @@
       "@store/*": ["store/*"],
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
-      "@screens/*": ["screens/*"]
+      "@screens/*": ["screens/*"],
+      "@features/*": ["features/*"]
     }
   }
 }
