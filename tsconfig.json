@@ -1,3 +1,14 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@navigation/*": ["navigation/*"],
+      "@components/*": ["components/*"],
+      "@store/*": ["store/*"],
+      "@styles/*": ["styles/*"],
+      "@assets/*": ["assets/*"],
+      "@screens/*": ["screens/*"]
+    }
+  }
 }
