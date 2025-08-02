@@ -9,7 +9,8 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@screens/*": ["screens/*"],
-      "@features/*": ["features/*"]
+      "@features/*": ["features/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }
