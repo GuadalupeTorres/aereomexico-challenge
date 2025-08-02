@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import WelcomeScreen from '@screens/WelcomeScreen';
+import FlightTrackingScreen from '@screens/FlightTrackingScreen';
 
 const Stack = createNativeStackNavigator();
 
 const SignAllScreens = () => {
   return (
-    <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false,gestureEnabled: false }}>
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
+    <Stack.Navigator initialRouteName="FlightTracking" screenOptions={{ headerShown: false,gestureEnabled: false }}>
+      <Stack.Screen name="FlightTracking" component={FlightTrackingScreen} />
     </Stack.Navigator>
   );
 }
