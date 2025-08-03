@@ -4,6 +4,12 @@ import { scale } from 'react-native-size-matters';
 
 
 const styles = StyleSheet.create({
+  flexRow: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.white
@@ -34,14 +40,7 @@ const styles = StyleSheet.create({
   assistanceWrapper: {
     marginTop: scale(30),
   },
-  suggestionContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
   lineheight: {
-    paddingTop:scale(42),
     lineHeight: scale(32),
   },
   link: {
