@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text as RNText } from 'react-native';
 import StyleHelper from '@utils/styleHelper';
-import { scale } from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 const Text = ({ ...props }) => {
 
@@ -15,7 +15,7 @@ const Text = ({ ...props }) => {
   return (
     <RNText
       allowFontScaling={false}
-      style={[baseStyle, props.style,{lineHeight: scale(22)}]}
+      style={[baseStyle, props.style]}
     >
       {props.children}
     </RNText>

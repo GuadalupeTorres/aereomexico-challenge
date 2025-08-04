@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { InputFieldProps } from '@components/InputField/types';
 import { FlightCardWrapper, Row, PaddedView, DividerLine } from './FlightCard.styles';
-import flight from '@assets/icons/flight.png';
+import flight from '@assets/icons/arrive.png';
 import { Image, TouchableOpacity, View } from 'react-native';
 import Text from '@components/Text/Text';
 import { scale } from 'react-native-size-matters';
 import StatusTag from '@components/StatusTag/StatusTag';
 import { StyledSwitch, SwitchContainer } from '@components/Switch/Switch';
 import { LinkText } from '@components/LinkText/LinkText';
+import { FlightCardProps } from './types';
+import FlightTimeRow from '@components/FlightTimeRow/FlightTimeRow';
 
-const FlightCard: React.FC = ({
-}) => {
+const FlightCard: React.FC<FlightCardProps> = ({onPress}) => {
   const [isEnabled, setIsEnabled] = useState(false);
   return (
     <FlightCardWrapper>
@@ -29,31 +30,22 @@ const FlightCard: React.FC = ({
             </SwitchContainer>
           </Row>
         </Row>
-        <Row>
-          <Text h22 black semibold>06:24</Text>
-          <Image
-            source={flight}
-            style={{
-              width: scale(128),
-              height: scale(40), // opcional para mantener proporción
-              resizeMode: 'contain',
-            }}
-          />
-          <Text h22 black semibold>09:21</Text>
-        </Row>
-        <Row>
-          <Text h14 black semibold>MEX</Text>
-          <Text h10 black semibold>2h 28m</Text>
-          <Text h14 semibold black>CUN</Text>
-        </Row>
+        <FlightTimeRow
+          departureTime="06:24"
+          arrivalTime="09:21"
+          departureCode="MEX"
+          arrivalCode="CUN"
+          duration="2h 28m"
+          status="delayed"
+        />
       </PaddedView>
       <DividerLine />
       <PaddedView>
         <Row>
           <Text h12 black semibold>AM 500</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onPress}>
             <Row>
-              <LinkText onPress={() => console.log('Navegando...')}>
+              <LinkText>
                 <Text h11 regular black >Detail</Text>
               </LinkText>
               <Image source={require('@assets/icons/row-right.png')} />

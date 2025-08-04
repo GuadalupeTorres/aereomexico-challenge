@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   },
   assistanceWrapper: {
     marginTop: scale(30),
+    alignItems:'center'
   },
   lineheight: {
     lineHeight: scale(32),

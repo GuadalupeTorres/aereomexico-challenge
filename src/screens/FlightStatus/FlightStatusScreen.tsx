@@ -2,10 +2,9 @@ import React from 'react';
 import { FlatList, View, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import FlightCard from '@components/FlightCard/FlightCard';
 import Text from '@components/Text/Text';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import Styles from './FlightStatus.styles';
 import BackArrow from '@assets/icons/back-arrow.png';
-import Colors from '@styles/Colors';
 
 // Simulación de datos — puedes reemplazarlo por tu lógica real
 const flightData = [
@@ -34,18 +33,26 @@ const flightData = [
 
 const FlightStatusScreen = () => {
   const route = useRoute();
-  // Si necesitas recibir flightId desde Search
-  // const { flightId } = route.params;
+  const navigation = useNavigation();
+
+
+  const handleFlightDetail=()=>{
+    navigation.navigate('FlightDetail')
+  }
 
   const renderItem = ({ item }) => (
-    <FlightCard></FlightCard>
+    <FlightCard onPress={handleFlightDetail}></FlightCard>
   );
+
+  const handleGoBack=()=>{
+    navigation.goBack();
+  }
 
   return (
     <View style={Styles.container}>
       <SafeAreaView>
         <View style={Styles.containHeader}>
-          <TouchableOpacity style={Styles.backButton}>
+          <TouchableOpacity style={Styles.backButton} onPress={handleGoBack}>
             <Image source={BackArrow} style={Styles.icon} />
           </TouchableOpacity>
           <View>
