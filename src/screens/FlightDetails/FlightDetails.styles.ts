@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
     justifyContent:'space-between'
   },
   arrived: {
-
     backgroundColor: Colors.black,
     color: Colors.white,
     borderRadius: scale(4),
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     marginBottom: scale(20),
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'space-between'
+    gap: scale(36)
   }
 });
 

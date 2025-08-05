@@ -13,9 +13,9 @@ import InAirIcon from '@assets/icons/in-air.png';
 import DelayedIcon from '@assets/icons/delay.png';
 
 const statusIcons = {
-  arrived: ArrivedIcon,
-  inAir: InAirIcon,
-  delayed: DelayedIcon,
+  ARRIVED: ArrivedIcon,
+  ON_TIME: InAirIcon,
+  DELAYED: DelayedIcon,
 };
 
 const FlightTimeRow: React.FC<FlightTimeRowProps> = ({

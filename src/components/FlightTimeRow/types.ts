@@ -1,4 +1,4 @@
-export interface FlightTimeRowProps {
+export type FlightTimeRowProps = {
   departureTime: string;
   arrivalTime: string;
   departureCode: string;

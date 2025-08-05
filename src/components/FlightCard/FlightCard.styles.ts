@@ -24,7 +24,7 @@ const getColors = (status: LabelProps['status']) => {
     case 'transit':
       return { bg: Colors.info, border: Colors.info, text: 'white' };
     case 'delayed':
-      return { bg: '#FFD700', border: '#FF8C00', text: 'black' };
+      return { bg: Colors.warning, border: Colors.warning, text: 'black' };
     default:
       return { bg: 'gray', border: 'darkgray', text: 'white' };
   }

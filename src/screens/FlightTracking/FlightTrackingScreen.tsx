@@ -1,17 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { View, TouchableOpacity, SafeAreaView } from 'react-native';
 import TabSelector from '@components/TabSelector/TabSelector';
 import InputField from '@components/InputField/InputField';
 import ButtonSquare from '@components/ButtonSquare/ButtonSquare';
-import { useFlightTrackingHook } from '../../hooks/useFlightTracking';
+import useFlightSearch  from '@hooks/useFlightTracking';
 import Text from '@components/Text/Text';
 
 import Styles from './FlightTracking.styles';
 import { LinkText } from '@components/LinkText/LinkText';
 import { GeneralStyles } from '@styles/GeneralStyles';
+import { useNavigation } from '@react-navigation/native';
+import { getFlightByNumber, getFlightsByRoute } from '../../services/SearchFlightService';
+
 
 const FlightTrackingScreen = () => {
-  const selectedFlight = useFlightTrackingHook();
+  const {loading, tab,setTab,flightNumber,flightDestination,flightOrigin,departureDate,setFlightDestination,
+    setDepartureDate,setFlightNumber,setFlightOrigin,searchByNumber, searchByRoute } = useFlightSearch();
 
   return (
     <View style={Styles.container}>
@@ -23,61 +27,61 @@ const FlightTrackingScreen = () => {
             Keep you informed in real time!
           </Text>
         </View>
-        <TabSelector selectedTab={selectedFlight.tab} onSelect={selectedFlight.setTab} />
+        <TabSelector selectedTab={tab} onSelect={setTab} />
 
         <View style={Styles.formWrapper}>
-          {selectedFlight.tab === 'flight' && (
+          {tab === 'flight' && (
             <View style={Styles.inputsRow}>
               <View style={Styles.inputLeft}>
                 <InputField
                   label="Flight number"
-                  value={selectedFlight.flightNumber}
+                  value={flightNumber}
                   placeholder="AM 500"
-                  onChangeText={selectedFlight.setFlightNumber}
+                  onChangeText={setFlightNumber}
                 />
               </View>
               <View style={Styles.inputRight}>
                 <InputField
                   label="Date of departure"
-                  value={selectedFlight.departureDate}
+                  value={departureDate}
                   placeholder="Tuesday, Nov 21"
-                  onChangeText={selectedFlight.setDepartureDate}
+                  onChangeText={setDepartureDate}
                 />
               </View>
             </View>
           )}
-          {selectedFlight.tab !== 'flight' && (
+          {tab !== 'flight' && (
             <>
               <View style={[GeneralStyles.flexRow, GeneralStyles.flexGap]}>
                 <View style={Styles.inputLeft}>
                   <InputField
                     label="Origin"
-                    value={selectedFlight.flightNumber}
+                    value={flightOrigin}
                     placeholder="Origin"
-                    onChangeText={selectedFlight.setFlightNumber}
+                    onChangeText={setFlightOrigin}
                   />
                 </View>
                 <View style={Styles.inputRight}>
                   <InputField
                     label="Destination"
-                    value={selectedFlight.flightNumber}
+                    value={flightDestination}
                     placeholder="Destination"
-                    onChangeText={selectedFlight.setFlightNumber}
+                    onChangeText={setFlightDestination}
                   />
                 </View>
               </View>
               <View style={Styles.searchButtonWrapper}>
                 <InputField
                   label="Date of departure"
-                  value={selectedFlight.flightNumber}
+                  value={flightNumber}
                   placeholder="Date of departure"
-                  onChangeText={selectedFlight.setFlightNumber}
+                  onChangeText={setFlightNumber}
                 />
               </View>
             </>
           )}
           <View style={Styles.searchButtonWrapper}>
-            <ButtonSquare size='full' black onPress={selectedFlight.searchFlight}>
+            <ButtonSquare size='full' black onPress={tab === 'flight'? searchByNumber : searchByRoute}>
               <Text h1 bold white center>
                 Search Flight
               </Text>
@@ -86,9 +90,9 @@ const FlightTrackingScreen = () => {
               <Text h12 black regular center>Can’t find your flight number?</Text>
               <View style={GeneralStyles.flexRow}>
                 <Text h12 black regular center>Try searching by </Text>
-                <TouchableOpacity onPress={() => console.log('Navigating to destination...')}>
+                <TouchableOpacity onPress={() => tab === 'flight'? setTab('flight') : setTab('destination')} >
                   <LinkText>
-                    <Text h12 semibold black style={Styles.link}>{selectedFlight.tab === 'flight'? "destination" : "flight number"}</Text>
+                    <Text h12 semibold black style={Styles.link}>{tab === 'flight'? "destination" : "flight number"}</Text>
                   </LinkText>
                 </TouchableOpacity>
               </View>
