@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import flightsReducer from '@features/flights/viewModels/FlightsSlice';
+import flightsReducer from '@redux/flightSlice';
 
 export const store = configureStore({
   reducer: {
