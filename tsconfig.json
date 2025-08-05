@@ -9,8 +9,11 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@screens/*": ["screens/*"],
-      "@features/*": ["features/*"],
-      "@utils/*": ["utils/*"]
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
+      "@redux/*": ["redux/*"],
+      "@mocks/*": ["mocks/*"]
     }
   }
 }
