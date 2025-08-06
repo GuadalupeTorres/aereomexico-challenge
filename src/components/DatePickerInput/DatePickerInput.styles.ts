@@ -18,7 +18,7 @@ export const InputButton = styled.TouchableOpacity`
 `;
 
 export const InputText = styled.Text<InputTextProps>`
-  font-weight: semibold;
+  font-weight: 600;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0px;

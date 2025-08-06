@@ -10,7 +10,7 @@ const getColors = (status: StatusProps['status']) => {
     case 'ON_TIME':
       return { bg: Colors.info, border: Colors.info, text: Colors.white, label: 'In Transit' };
     case 'DELAYED':
-      return { bg: Colors.warning, border: Colors.warning, text: Colors.black, label: 'Delayed' };
+      return { bg: Colors.warning, border: Colors.warning, text: Colors.white, label: 'Delayed' };
     default:
       return { bg: Colors.black, border: Colors.black, text: Colors.white, label: 'Unknown' };
   }
