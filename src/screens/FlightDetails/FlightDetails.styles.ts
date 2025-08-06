@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:30,
     borderTopRightRadius:30,
     position:'relative',
-    marginTop: scale(-120)
+    marginTop: scale(-135)
   },
   card: {
     padding: scale(20),
@@ -54,10 +54,10 @@ const styles = StyleSheet.create({
   },
   containdDetail:{
     marginHorizontal:scale(25),
-    paddingTop:scale(21),
+    paddingTop: scale(21),
   },
   containTime: {
-    paddingBottom:scale(25),
+    paddingBottom: scale(25),
   },
   infoTerminal: {
     backgroundColor:Colors.snowGray,

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, TouchableOpacity, SafeAreaView } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, TouchableOpacity } from 'react-native';
 import TabSelector from '@components/TabSelector/TabSelector';
 import InputField from '@components/InputField/InputField';
 import ButtonSquare from '@components/ButtonSquare/ButtonSquare';
@@ -9,14 +9,28 @@ import Text from '@components/Text/Text';
 import Styles from './FlightTracking.styles';
 import { LinkText } from '@components/LinkText/LinkText';
 import { GeneralStyles } from '@styles/GeneralStyles';
-import { useNavigation } from '@react-navigation/native';
-import { getFlightByNumber, getFlightsByRoute } from '../../services/SearchFlightService';
 import DatePickerInput from '@components/DatePickerInput/DatePickerInput';
+import { useFocusEffect } from '@react-navigation/native';
 
 const FlightTrackingScreen = () => {
   const { loading, tab, setTab, flightNumber, flightDestination, flightOrigin, departureDate, setFlightDestination,
-    setDepartureDate, setFlightNumber, setFlightOrigin, searchByNumber, searchByRoute } = useFlightSearch();
+    setDepartureDate, setFlightNumber, setFlightOrigin, searchByNumber, searchByRoute, handleCleanParams } = useFlightSearch();
   const [selectedDate, setSelectedDate] = useState(new Date());
+
+  useFocusEffect(
+    useCallback(() => {
+      setFlightNumber('');
+      setFlightDestination('');
+      setFlightOrigin('');
+      setSelectedDate(new Date);
+      setDepartureDate(new Date);
+    }, [])
+  );
+
+  const handleChangeTab =()=>{
+    tab === 'flight' ? setTab('destination') : setTab('flight')
+    handleCleanParams();
+  }
 
   return (
     <View style={Styles.container}>
@@ -39,6 +53,15 @@ const FlightTrackingScreen = () => {
                 value={flightNumber}
                 placeholder="AM 500"
                 onChangeText={setFlightNumber}
+              />
+            </View>
+            <View style={Styles.inputRight}>
+              <DatePickerInput
+                label="Date of departure"
+                value={selectedDate}
+                onChange={setSelectedDate}
+                mode="date"
+                icon="event"
               />
             </View>
           </View>
@@ -64,11 +87,12 @@ const FlightTrackingScreen = () => {
               </View>
             </View>
             <View style={Styles.searchButtonWrapper}>
-              <InputField
+              <DatePickerInput
                 label="Date of departure"
-                value={flightNumber}
-                placeholder="Date of departure"
-                onChangeText={setFlightNumber}
+                value={selectedDate}
+                onChange={setSelectedDate}
+                mode="date"
+                icon="event"
               />
             </View>
           </>
@@ -78,8 +102,12 @@ const FlightTrackingScreen = () => {
             black
             onPress={tab === 'flight' ? searchByNumber : searchByRoute}
             disabled={
-              (tab === 'flight' && flightNumber.trim() === '') ||
-              (tab === 'destination' && (flightOrigin.trim() === '' || flightDestination.trim() === ''))
+              (tab === 'flight' && (flightNumber.trim() === '' || !departureDate)) ||
+              (tab === 'destination' && (
+                flightOrigin.trim() === '' ||
+                flightDestination.trim() === '' ||
+                !departureDate
+              ))
             }
           >
             <Text h1 bold white center>
@@ -90,7 +118,7 @@ const FlightTrackingScreen = () => {
             <Text h12 black regular center>Can’t find your flight number?</Text>
             <View style={GeneralStyles.flexRow}>
               <Text h12 black regular center>Try searching by </Text>
-              <TouchableOpacity onPress={() => tab === 'flight' ? setTab('destination') : setTab('flight')} >
+              <TouchableOpacity onPress={() => handleChangeTab()} >
                 <LinkText>
                   <Text h12 semibold black style={Styles.link}>{tab === 'flight' ? "destination" : "flight number"}</Text>
                 </LinkText>

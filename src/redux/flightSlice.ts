@@ -1,4 +1,3 @@
-// redux/flightSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getFlightsByRoute, getFlightByNumber } from '@services/SearchFlightService';
 
@@ -11,7 +10,7 @@ export const fetchFlightsByRoute = createAsyncThunk(
 
 export const fetchFlightByNumber = createAsyncThunk(
   'flights/byNumber',
-  async (flightNumber: string, departureDate: any) => {
+  async ({ flightNumber, departureDate }: { flightNumber: string; departureDate: any }) => {
     return await getFlightByNumber(flightNumber, departureDate);
   }
 );
@@ -28,7 +27,7 @@ const flightSlice = createSlice({
       flightNumber: '',
       origin: '',
       destination: '',
-      departureDate: '',
+      departureDate: null,
     },
   },
   reducers: {
@@ -40,6 +39,14 @@ const flightSlice = createSlice({
     },
     setSearchParams: (state, action) => {
       state.searchParams = action.payload;
+    },
+     clearSearchParams: (state) => {
+      state.searchParams = {
+        flightNumber: '',
+        origin: '',
+        destination: '',
+        departureDate: null,
+      };
     },
     setFlights(state, action) {
       state.flights = action.payload;
@@ -82,6 +89,13 @@ const flightSlice = createSlice({
       });
   },
 });
-export const { setSelectedFlight, clearSelectedFlight, setSearchParams, setFlights, toggleFavorite } = flightSlice.actions;
+export const { 
+  setSelectedFlight, 
+  clearSelectedFlight, 
+  setSearchParams, 
+  setFlights, 
+  toggleFavorite,
+  clearSearchParams 
+} = flightSlice.actions;
 
 export default flightSlice.reducer;

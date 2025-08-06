@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:scale(21)
   },
   containHeader: {
-    marginTop: scale(41),
+    marginTop: scale(17.43),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
