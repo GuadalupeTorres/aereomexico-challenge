@@ -12,13 +12,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		74B6C59C6847411E91087E89 /* Garnett-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Aereomexico-AereomexicoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Aereomexico-AereomexicoTests.a */; };
+		7A138A0F9DE24A4A9DBDEC92 /* Garnett-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37182AB46DEA425A87317764 /* Garnett-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8ADDE960A71948B99F8A7F6B /* Garnett-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4CFCB670B9D46FAA3A8A7C7 /* Garnett-Light.ttf */; };
-		74B6C59C6847411E91087E89 /* Garnett-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */; };
-		7A138A0F9DE24A4A9DBDEC92 /* Garnett-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37182AB46DEA425A87317764 /* Garnett-Regular.ttf */; };
-		E0E9E1EB0FA44EDCA320B52F /* Garnett-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */; };
 		D6F1868EEB8E47C1BDC37B82 /* Garnett-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF7052A19A7B4EC6BB3A6E03 /* Garnett-Bold.ttf */; };
+		E0E9E1EB0FA44EDCA320B52F /* Garnett-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,18 +42,18 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Aereomexico/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Aereomexico/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Aereomexico-AereomexicoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aereomexico-AereomexicoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Semibold.ttf"; path = "../assets/fonts/Garnett-Semibold.ttf"; sourceTree = "<group>"; };
+		37182AB46DEA425A87317764 /* Garnett-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Regular.ttf"; path = "../assets/fonts/Garnett-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Aereomexico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aereomexico.debug.xcconfig"; path = "Target Support Files/Pods-Aereomexico/Pods-Aereomexico.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Aereomexico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aereomexico.release.xcconfig"; path = "Target Support Files/Pods-Aereomexico/Pods-Aereomexico.release.xcconfig"; sourceTree = "<group>"; };
+		58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Medium.ttf"; path = "../assets/fonts/Garnett-Medium.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Aereomexico-AereomexicoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aereomexico-AereomexicoTests.debug.xcconfig"; path = "Target Support Files/Pods-Aereomexico-AereomexicoTests/Pods-Aereomexico-AereomexicoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Aereomexico.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aereomexico.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Aereomexico/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Aereomexico-AereomexicoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aereomexico-AereomexicoTests.release.xcconfig"; path = "Target Support Files/Pods-Aereomexico-AereomexicoTests/Pods-Aereomexico-AereomexicoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4CFCB670B9D46FAA3A8A7C7 /* Garnett-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Light.ttf"; path = "../assets/fonts/Garnett-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C4CFCB670B9D46FAA3A8A7C7 /* Garnett-Light.ttf */ = {isa = PBXFileReference; name = "Garnett-Light.ttf"; path = "../assets/fonts/Garnett-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */ = {isa = PBXFileReference; name = "Garnett-Medium.ttf"; path = "../assets/fonts/Garnett-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		37182AB46DEA425A87317764 /* Garnett-Regular.ttf */ = {isa = PBXFileReference; name = "Garnett-Regular.ttf"; path = "../assets/fonts/Garnett-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */ = {isa = PBXFileReference; name = "Garnett-Semibold.ttf"; path = "../assets/fonts/Garnett-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EF7052A19A7B4EC6BB3A6E03 /* Garnett-Bold.ttf */ = {isa = PBXFileReference; name = "Garnett-Bold.ttf"; path = "../assets/fonts/Garnett-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EF7052A19A7B4EC6BB3A6E03 /* Garnett-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Garnett-Bold.ttf"; path = "../assets/fonts/Garnett-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +116,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3350C57969C74DCB8A13F247 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4CFCB670B9D46FAA3A8A7C7 /* Garnett-Light.ttf */,
+				58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */,
+				37182AB46DEA425A87317764 /* Garnett-Regular.ttf */,
+				1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */,
+				EF7052A19A7B4EC6BB3A6E03 /* Garnett-Bold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,19 +171,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		3350C57969C74DCB8A13F247 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				C4CFCB670B9D46FAA3A8A7C7 /* Garnett-Light.ttf */,
-				58D96742FC9C490B815DE794 /* Garnett-Medium.ttf */,
-				37182AB46DEA425A87317764 /* Garnett-Regular.ttf */,
-				1A6F4968D3C24BB497F0BD5D /* Garnett-Semibold.ttf */,
-				EF7052A19A7B4EC6BB3A6E03 /* Garnett-Bold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

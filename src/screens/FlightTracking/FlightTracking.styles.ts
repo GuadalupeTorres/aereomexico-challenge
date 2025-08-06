@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   containerHeader: {
     justifyContent: 'center',
     height: scale(200),
-    backgroundColor: '#F7F7F7',
-    borderBottomColor: '#CCCCCC',
+    backgroundColor: Colors.snowGray,
+    borderBottomColor: Colors.lightGray,
     borderBottomWidth: 1
   },
   formWrapper: {
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   },
   assistanceWrapper: {
     marginTop: scale(30),
+    alignItems:'center'
   },
   lineheight: {
     lineHeight: scale(32),
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   link: {
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
-    textDecorationColor: Colors.black, // puedes cambiar el color si lo necesitas
+    textDecorationColor: Colors.black,
   },
   containerImage: {
     width: '100%',

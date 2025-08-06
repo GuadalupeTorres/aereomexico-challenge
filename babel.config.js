@@ -11,8 +11,11 @@ module.exports = {
         '@styles': './src/styles',
         '@assets': './assets',
         '@screens': './src/screens',
-        '@features': './src/features',
+        '@hooks': './src/hooks',
         '@utils': './src/utils',
+        '@services': './src/services',
+        '@redux': './src/redux',
+        '@mocks': './src/mocks',
       }
     }]
   ]

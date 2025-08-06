@@ -25,6 +25,7 @@ const ButtonSquare: React.FC<ButtonProps> = ({
       style={[{ width }, containerStyle]}
       backgroundColor={backgroundColor}
       onPress={onPress}
+      disabled={props.disabled}
       {...props}
     >
       {children}
@@ -36,12 +37,17 @@ export default ButtonSquare;
 
 const ButtonWrapper = styled.TouchableOpacity.attrs(() => ({
   activeOpacity: 0.7,
-}))<{ backgroundColor: string }>`
+}))<{
+  backgroundColor: string;
+  disabled?: boolean;
+}>`
   padding: 16px 24px;
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundColor, disabled }) =>
+    disabled ? Colors.lightGray : backgroundColor};
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;
 
 function getBtnSize(size: 'sm' | 'md' | 'lg' | 'full' ): number | string {
