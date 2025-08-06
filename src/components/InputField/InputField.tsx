@@ -2,6 +2,7 @@ import React from 'react';
 import { Container,StyledInput } from './InputField.styles';
 import Text from '@components/Text/Text';
 import { InputFieldProps } from './types';
+import Colors from '@styles/Colors';
 
 const InputField: React.FC<InputFieldProps> = ({
   label,
@@ -9,7 +10,7 @@ const InputField: React.FC<InputFieldProps> = ({
   placeholder,
   onChangeText,
 }) => {
-  
+
   return (
     <Container>
       <Text h10 regular black>
@@ -19,6 +20,7 @@ const InputField: React.FC<InputFieldProps> = ({
         value={value}
         placeholder={placeholder}
         onChangeText={onChangeText}
+        placeholderTextColor={Colors.overlayBlack}
       />
     </Container>
   );
