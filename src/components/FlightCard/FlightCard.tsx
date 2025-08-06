@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlightCardWrapper, Row, PaddedView, DividerLine } from './FlightCard.styles';
+import { FlightCardWrapper, Row, PaddedView, DividerLine, StatusTagWrapper } from './FlightCard.styles';
 import { Image, TouchableOpacity, View } from 'react-native';
 import Text from '@components/Text/Text';
 import StatusTag from '@components/StatusTag/StatusTag';
@@ -18,9 +18,9 @@ const FlightCard: React.FC<FlightCardProps> = ({onPress,data}) => {
     <FlightCardWrapper>
       <PaddedView>
         <Row>
-          <View style={{ width: 80, height: 28, position: 'relative', top: -5, left: -18 }}>
+          <StatusTagWrapper>
             <StatusTag status={data?.status}/>
-          </View>
+          </StatusTagWrapper>
           <Row>
             <Text h11 black semibold>Favorite</Text>
             <SwitchContainer>
@@ -47,7 +47,7 @@ const FlightCard: React.FC<FlightCardProps> = ({onPress,data}) => {
           <TouchableOpacity onPress={onPress}>
             <Row>
               <LinkText>
-                <Text h11 regular black >Detail</Text>
+                <Text h11 regular black>Detail</Text>
               </LinkText>
               <Image source={require('@assets/icons/row-right.png')} />
             </Row>

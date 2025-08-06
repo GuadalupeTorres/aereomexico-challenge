@@ -11,6 +11,7 @@ import { FlightTimeRowProps } from './FlightTimeRow.types';
 import ArrivedIcon from '@assets/icons/arrive.png';
 import InAirIcon from '@assets/icons/in-air.png';
 import DelayedIcon from '@assets/icons/delay.png';
+import Text from '@components/Text/Text';
 
 const statusIcons = {
   ARRIVED: ArrivedIcon,
@@ -31,15 +32,15 @@ const FlightTimeRow: React.FC<FlightTimeRowProps> = ({
   return (
     <>
       <Row>
-        <TimeText>{departureTime}</TimeText>
+        <Text h22 semibold black>{departureTime}</Text>
         <FlightImage source={flightImage} />
-        <TimeText>{arrivalTime}</TimeText>
+        <Text h22 semibold black>{arrivalTime}</Text>
       </Row>
 
       <Row>
-        <CodeText>{departureCode}</CodeText>
-        <DurationText>{duration}</DurationText>
-        <CodeText>{arrivalCode}</CodeText>
+        <Text h14 regular black>{departureCode}</Text>
+        <Text h10 semibold overlayBlack>{duration}</Text>
+        <Text h14 regular black>{arrivalCode}</Text>
       </Row>
     </>
   );
