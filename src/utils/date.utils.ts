@@ -14,7 +14,7 @@ export const formatDuration = (minutes: number): string => {
   return `${h} ${m}`.trim();
 };
 
-export const formatDateToLabel = (dateString: string): string => {
+export const formatDateToLabel = (dateString: any): string => {
   if (!dateString) return '';
 
   const date = new Date(dateString);
@@ -23,5 +23,13 @@ export const formatDateToLabel = (dateString: string): string => {
     month: 'short',
     day: 'numeric',
   };
-  return date.toLocaleDateString('en-US', options); 
+  return date?.toLocaleDateString('en-US', options); 
 }
+
+export const formatDateForParams = (date: Date) => {
+  const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+  const month = date.toLocaleDateString('en-US', { month: 'short' });
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${weekday}, ${month} ${day}`;
+};

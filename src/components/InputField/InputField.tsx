@@ -9,6 +9,7 @@ const InputField: React.FC<InputFieldProps> = ({
   placeholder,
   onChangeText,
 }) => {
+  
   return (
     <Container>
       <Text h10 regular black>

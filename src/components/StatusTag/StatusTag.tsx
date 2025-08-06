@@ -1,4 +1,3 @@
-// components/StatusIndicator.tsx
 import React from 'react';
 import styled from 'styled-components/native';
 import { StatusProps } from './type';

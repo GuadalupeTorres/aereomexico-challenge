@@ -1,4 +1,3 @@
-// FlightCard.styles.ts
 import styled from 'styled-components/native';
 import { scale } from 'react-native-size-matters';
 import Colors from '@styles/Colors';
@@ -6,9 +5,9 @@ import Colors from '@styles/Colors';
 export const FlightCardWrapper = styled.View`
   border-width: 2px;
   border-color: ${Colors.black};
-  border-radius: ${scale(12)}px;
-  margin-vertical: ${scale(6)}px;
-  padding-bottom: ${scale(9)}px;
+  border-radius: 12px;
+  margin-vertical: 6px;
+  padding-bottom: 9px;
   background-color: white;
   elevation: 2;
 `;
@@ -84,5 +83,14 @@ export const DividerLine = styled.View`
   width: 100%;
   background-color: ${Colors.overlayBlack};
   margin-top: ${scale(10)}px;
+  margin-bottom: ${scale(9)}px;
+`;
+
+export const StatusTagWrapper = styled.View`
+  width: 80px;
+  height: 28px;
+  position: relative;
+  top: -5px;
+  left: -18px;
 `;
 
