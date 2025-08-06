@@ -8,9 +8,12 @@ import { LinkText } from '@components/LinkText/LinkText';
 import { FlightCardProps } from './types';
 import FlightTimeRow from '@components/FlightTimeRow/FlightTimeRow';
 import { formatDuration, formatTime } from '@utils/date.utils';
+import useFlightSearch  from '@hooks/useFlightTracking';
 
 const FlightCard: React.FC<FlightCardProps> = ({onPress,data}) => {
   const [isEnabled, setIsEnabled] = useState(false);
+  const { handleFavorites } = useFlightSearch();
+
   return (
     <FlightCardWrapper>
       <PaddedView>
@@ -22,8 +25,8 @@ const FlightCard: React.FC<FlightCardProps> = ({onPress,data}) => {
             <Text h11 black semibold>Favorite</Text>
             <SwitchContainer>
               <StyledSwitch
-                value={isEnabled}
-                onValueChange={setIsEnabled}
+                value={data.isFavorite}
+                onValueChange={()=>handleFavorites(data.flightId)}
               />
             </SwitchContainer>
           </Row>

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFlightsByRoute, fetchFlightByNumber, setSelectedFlight, setSearchParams } from '@redux/flightSlice';
+import { fetchFlightsByRoute, fetchFlightByNumber, setSelectedFlight, setSearchParams,toggleFavorite} from '@redux/flightSlice';
 import { RootState } from '@store';
 
 const useFlightTrackingHook = () => {
@@ -17,20 +17,22 @@ const useFlightTrackingHook = () => {
   const searchByRoute = () => {
     dispatch(setSearchParams({ flightNumber: '', origin: flightOrigin, destination: flightDestination, departureDate: departureDate }));
     dispatch(fetchFlightsByRoute({ flightOrigin, flightDestination, departureDate }));
-    navigation.navigate('FlightStatus')
+    navigation.navigate('FlightStatus');
   };
 
   const searchByNumber = () => {
     dispatch(setSearchParams({ flightNumber: flightNumber, origin: '', destination: '', departureDate: departureDate }));
     dispatch(fetchFlightByNumber(flightNumber, departureDate));
-    navigation.navigate('FlightStatus')
+    navigation.navigate('FlightStatus');
   };
 
   const handleSelectFlight = (flight: any) => {
     dispatch(setSelectedFlight(flight));
   };
 
-
+  const handleFavorites = (id: any) => {
+    dispatch(toggleFavorite(id));
+  };
 
   return {
     tab,
@@ -49,7 +51,8 @@ const useFlightTrackingHook = () => {
     setFlightDestination,
     selectedFlight,
     handleSelectFlight,
-    searchParams
+    searchParams,
+    handleFavorites
   };
 };
 

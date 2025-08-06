@@ -23,6 +23,7 @@ const flightSlice = createSlice({
     loading: false,
     error: null,
     selectedFlight: null,
+    isFavorite: false,
     searchParams: {
       flightNumber: '',
       origin: '',
@@ -40,6 +41,18 @@ const flightSlice = createSlice({
     setSearchParams: (state, action) => {
       state.searchParams = action.payload;
     },
+    setFlights(state, action) {
+      state.flights = action.payload;
+    },
+    toggleFavorite(state, action) {
+      const flight = state.flights.find(f => f.flightId === action.payload);
+      if (flight) {
+        flight.isFavorite = !flight.isFavorite;
+        state.flights = [...state.flights].sort((a, b) =>
+          Number(b.isFavorite) - Number(a.isFavorite)
+        );
+      }
+    }
   },
   extraReducers: builder => {
     builder
@@ -52,15 +65,23 @@ const flightSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchFlightsByRoute.fulfilled, (state, action) => {
-        state.flights = action.payload;
+        state.flights = action.payload.map(flight => ({
+          ...flight,
+          isFavorite: false,
+          flightId: `${flight.segment.operatingCarrier}_${flight.segment.operatingFlightCode}_${flight.segment.departureDateTime}`,
+        }));
         state.loading = false;
       })
       .addCase(fetchFlightByNumber.fulfilled, (state, action) => {
-        state.flights = action.payload;
+        state.flights = action.payload.map(flight => ({
+          ...flight,
+          isFavorite: false,
+          flightId: `${flight.segment.operatingCarrier}_${flight.segment.operatingFlightCode}_${flight.segment.departureDateTime}`,
+        }));
         state.loading = false;
       });
   },
 });
-export const { setSelectedFlight, clearSelectedFlight, setSearchParams } = flightSlice.actions;
+export const { setSelectedFlight, clearSelectedFlight, setSearchParams, setFlights, toggleFavorite } = flightSlice.actions;
 
 export default flightSlice.reducer;
